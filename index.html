@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trident Realestate — Boise & Treasure Valley</title>
+  <meta name="description" content="Browse Boise & Treasure Valley real estate via authorized IDX. Genuine, accurate information.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self' https: data:; connect-src 'self'; frame-src https:; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Trident Realestate Home">
+        <span class="logo" aria-hidden="true">TR</span>
+        <span class="brand-text">Trident Realestate</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#search">Buy</a>
+        <a href="#contact">Sell</a>
+        <a href="#communities">Communities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Connect</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="--hero:url('https://images.unsplash.com/photo-1580130718190-1dd0893e63d2?q=80&w=1920&auto=format&fit=crop')" role="region" aria-label="Hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <h1>Browse Boise & Treasure Valley Real Estate</h1>
+        <form id="quickSearch" class="search" novalidate>
+          <label class="search-field">
+            <input type="text" name="q" placeholder="City, Address, Zip" aria-label="Search by City, Address, or Zip">
+          </label>
+          <button type="button" class="filters" aria-expanded="false" aria-controls="filterPanel">
+            <span>Filters</span>
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14l-5.5 6v4l-3 2v-6L3 6z" fill="currentColor"/></svg>
+          </button>
+          <button class="start" type="submit">Start Search</button>
+        </form>
+        <div class="under-links" aria-hidden="true">
+          <a href="#search">BUY</a>
+          <span>•</span>
+          <a href="#contact">SELL</a>
+        </div>
+        <div id="filterPanel" class="filters-panel" hidden>
+          <div class="filters-grid">
+            <label>Min Price <input type="number" name="min" min="0" step="1000" placeholder="300000"></label>
+            <label>Max Price <input type="number" name="max" min="0" step="1000" placeholder="1500000"></label>
+            <label>Beds <input type="number" name="beds" min="0" step="1" placeholder="3"></label>
+            <label>Baths <input type="number" name="baths" min="0" step="1" placeholder="2"></label>
+          </div>
+          <p class="tiny">Placeholders only—embed approved IDX filters once enabled.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-dark">
+      <div class="container intro-grid">
+        <div class="intro-copy">
+          <h2>Genuine, Local, MLS‑Backed</h2>
+          <p>Listings are displayed via an authorized IDX provider with proper attribution to the listing broker. No scraped data, no copied content—just accurate information from Intermountain MLS.</p>
+          <div class="intro-actions">
+            <a href="#communities" class="btn light">View All</a>
+            <a href="#contact" class="btn ghost">Find Out More</a>
+          </div>
+        </div>
+        <div class="intro-mark" aria-hidden="true">
+          <div class="house-mark">
+            <div class="house-tr">TR</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="communities" class="communities">
+      <div class="container">
+        <h2>Explore Communities</h2>
+        <p class="muted">Quick links to saved searches</p>
+        <div class="grid">
+          <a class="card community" href="#" data-search="Boise Bench" rel="nofollow">Boise Bench</a>
+          <a class="card community" href="#" data-search="Southeast Boise" rel="nofollow">Southeast Boise</a>
+          <a class="card community" href="#" data-search="Meridian" rel="nofollow">Meridian</a>
+          <a class="card community" href="#" data-search="Eagle" rel="nofollow">Eagle</a>
+          <a class="card community" href="#" data-search="Kuna" rel="nofollow">Kuna</a>
+          <a class="card community" href="#" data-search="Nampa" rel="nofollow">Nampa</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Tell us what you’re looking for. We’ll send a curated list from IMLS via our IDX provider.</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label><span class="label">Full name</span><input type="text" name="name" required></label>
+          <label><span class="label">Email</span><input type="email" name="email" required></label>
+          <label class="span-2"><span class="label">Phone</span><input type="tel" name="phone" pattern="[0-9+()\-\s]{7,}"></label>
+          <label class="span-2"><span class="label">Message</span><textarea name="message" rows="5" placeholder="Neighborhoods, budget, timeline…" required></textarea></label>
+          <button type="submit" class="btn span-2">Send</button>
+          <p id="contactMsg" class="tiny" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container tiny">
+      <p>© <span id="year"></span> Trident Realestate. All rights reserved.</p>
+      <p>Brokerage: Amherst Madison — Each office independently owned and operated. Equal Housing Opportunity. REALTOR®.</p>
+      <p>Listing data © Intermountain MLS — Listings are displayed via authorized IDX with “Listing provided by” attribution and listing broker contact as required.</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
